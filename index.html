@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Practice
+    </title>
+
+    <style>
+
+        .aimage
+        {
+            cursor:default;
+        }
+        #btnl
+        {
+            margin-left: 0.5cm;
+            cursor:pointer;
+            color:white;
+
+        }
+        #btnl:hover
+        {
+            color:rgb(29, 234, 248);
+        }
+
+        #btnr
+        {
+            
+            cursor:pointer;
+            color:white;
+            margin-right: 0.5cm;
+        }
+        #btnr:hover
+        {
+            color:turquoise;
+        }
+
+        img
+        {
+            height: 578px;
+            width: 958px;
+        }
+        .wrapper
+        {
+            margin-left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Automatic Slider</h1>
+    <br>
+    <br>
+    
+    <div class="wrapper" style="max-width:958px; position: relative;">
+        <a class="aimage" href=""> <img src="images/1.jpeg" class="mySlides" alt="" style="width:100%"></a>
+        <a class="aimage" href=""> <img src="images/2.jpg" class="mySlides" alt="" style="width:100%"></a>
+        <a class="aimage" href=""> <img src="images/3.jpg" class="mySlides" alt="" style="width:100%"></a>
+        <a class="aimage" href=""> <img src="images/4.jpg" class="mySlides" alt="" style="width:100%"></a>
+
+        <a class="btnl" style="position: absolute; top: 45%; left:0" onclick="plusDivs(-1)">
+            <h2 id="btnl">&#10094</h2>
+        </a>
+        <a class="btnr" style="position: absolute; top: 45%; right:0" onclick="plusDivs(1)">
+            <h2 id="btnr">&#10095</h2>
+            </a>
+    </div>
+
+    <script>
+        var slideIndex=1;
+        showDivs(slideIndex);
+
+        function plusDivs(n)
+        {
+            showDivs(slideIndex+=n);
+        }
+
+        function showDivs(n)
+        {
+            var i;
+            var x=document.getElementsByClassName("mySlides");
+
+            if(n < 1){slideIndex=x.length;};
+            if(n>x.length){slideIndex=1;};
+
+            for(i=0;i<x.length;i++)
+            {
+                x[i].style.display = "none";
+            }
+            x[slideIndex-1].style.display = "block";
+        }
+
+    </script>
+
+</body>
